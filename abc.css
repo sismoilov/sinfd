@@ -1,0 +1,59 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin:0;
+}
+h2{text-align: center;}
+.glitch{
+  font-size: 2rem;
+  font-weight:bold;
+  color: white;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.glitch::before,
+.glitch::after{
+    content: attr(data-text);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(178, 226, 46);
+    z-index: -1;
+    animation: glitch-anim 1s 
+    infinite;  
+}
+
+.glitch::after{
+    left: 2px;
+    animation-delay: 0.2s;
+}
+
+@keyframes glitch-anim{
+    0%{
+        transform: 
+        skew(-2deg);
+    }
+    20%{ 
+        transform: 
+        skew(3deg)
+        translate(2px, -2px);
+    }
+    40%{
+        transform: skew(-1deg)
+        translate(-2px, 2px);
+    }
+    60%{
+        transform: skew(2deg)
+        translate(3px, 3px);
+    }
+    100%{
+        transform: skew(0deg);
+    }
+}
+p{font-family:cursive;}
+p{margin: 0%;}
